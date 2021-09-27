@@ -19,9 +19,6 @@ nav div h3 {
     margin: 20px;
 }
 
-main {
-
-}
 main section {
     background-color: #FFC0CB;
     justify-content: center;
@@ -40,4 +37,11 @@ main section div {
 main section div img {
     width: 200px;
     height: 200px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #FFC0CB;
+    border-top: #000000 1px solid;
 }

@@ -52,8 +52,9 @@
 </main>
 
 <footer>
-
-
+    <div>
+       <p> To submit your own collection piece <a href="form.php" target="_blank" > click here </a> </p>
+    </div>
 </footer>
 
 </body>
