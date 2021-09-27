@@ -1,3 +1,43 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FFDAB9;
+}
+nav div {
+    display: flex;
+    justify-content: center;
+
+}
+
+nav div h3 {
+    margin: 20px;
+}
+
+main {
+
+}
+main section {
+    background-color: #FFC0CB;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 50px 0 0 0 ;
+}
+
+main section div {
+    border: #000000 2px solid;
+    margin: 40px 20px 20px 20px;
+    border-radius: 5px;
+}
+
+main section div img {
+    width: 200px;
+    height: 200px;
 }
