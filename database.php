@@ -13,9 +13,11 @@ $results = $query->fetchAll();
 //var_dump($results);
 //echo '</pre>';
 
+$dbResult = '';
 
 foreach($results as $result){
-    $dbResult = '<div>' . $result['artist'] . " " . $result['year-made'] . " " . $result['painting-name'] . " " . $result['image-link'] . '</div>';
+    $dbResult .= '<div>' . $result['artist'] . " in the year " . $result['year-made'] . " completed work on "
+        . $result['painting-name'] . ". " . $result['image-link'] . '</div>';
 }
 
 echo $dbResult;
