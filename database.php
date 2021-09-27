@@ -9,10 +9,6 @@ $query = $db->prepare(" SELECT `artist`, `year-made`, `painting-name`,`image-lin
 $query->execute();
 $results = $query->fetchAll();
 
-//echo '<pre>';
-//var_dump($results);
-//echo '</pre>';
-
 $dbResult = '';
 
 foreach($results as $result){
