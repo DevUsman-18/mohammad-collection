@@ -1,0 +1,7 @@
+"id","artist","yearMade","paintingName","imageLink"
+1,"Osaias Beer the Elder",1615,"Flowers in a porcelain Wan-Li Vase","./images/flowers.jpeg"
+2,"Canaletto",1740,"Venice: The Grand Canal","./images/canal.jpeg"
+3,"Alexandre-Hyacinthe Dunouy",1800,"Panoramic View of the Bay of Naples","./images/naples.jpeg"
+4,"John Constable",1821,"The Hay Wain","./images/haywain.jpeg"
+5,"Jackson Pollock",1935,"Going West","./images/goingwest.jpeg"
+6,"James Thornhill",1726,"Painted Hall","./images/paintedhall.jpeg"
