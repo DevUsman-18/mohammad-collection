@@ -9,11 +9,15 @@ $query = $db->prepare(" SELECT `artist`, `year-made`, `painting-name`,`image-lin
 $query->execute();
 $results = $query->fetchAll();
 
-$dbResult = '';
 
-foreach($results as $result){
-    $dbResult .= '<div>' . $result['artist'] . " in the year " . $result['year-made'] . " completed work on "
-        . $result['painting-name'] . ". " . $result['image-link'] . '</div>';
+function displayDB(array $results) {
+    $dbResult = ' ';
+    foreach($results as $result){
+       $dbResult .= '<div>'. '<img src="images/' . $result['image-link'] . '" alt="a painting of  '
+           . $result['painting-name'] .' " /> <p>'
+           . $result['artist'] . '<br>' . $result['painting-name'] . '<br>' . $result['year-made'] .  '</p></div>';
+    }
+    return $dbResult;
 }
 
-echo $dbResult;
+$displayResults = displayDB($results);

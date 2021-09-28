@@ -20,16 +20,17 @@ nav div h3 {
 main {
     background-color: #FFC0CB;
 }
+
 main section {
-    justify-content: center;
-    display: flex;
-    flex-flow: row wrap;
     margin: 50px 0 0 0 ;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
 }
 
 main section div {
     border: #000000 2px solid;
-    margin: 40px 20px 20px 20px;
+    margin: 20px;
     border-radius: 5px;
 }
 
@@ -38,8 +39,8 @@ main section div img {
     height: 200px;
 }
 
-.bottom-section {
-    margin: 0;
+main section div p {
+    font-size: 10px;
 }
 
 footer {
@@ -50,10 +51,6 @@ footer {
 }
 
 @media screen and (max-width: 460px){
-    .image1 {
-        margin-top: 40px;
-    }
-
     main section div {
         margin: 10px;
     }

@@ -1,3 +1,8 @@
+<?php
+
+require_once 'database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,38 +23,9 @@
 
 <main>
     <section>
-        <div class="image1">
-            <img src="images/canal.jpeg" />
-            <p> thiathiawhiatiaw</p>
-        </div>
-
-        <div>
-            <img src="images/flowers.jpeg" />
-            <p> thiathiawhiatiaw</p>
-        </div>
-
-        <div>
-            <img src="images/goingwest.jpeg" />
-            <p> thiathiawhiatiaw</p>
-        </div>
-    </section>
-
-    <section class="bottom-section">
-        <div>
-            <img src="images/haywain.jpeg" />
-            <p> thiathiawhiatiaw</p>
-        </div>
-
-        <div>
-            <img src="images/naples.jpeg" />
-            <p> thiathiawhiatiaw</p>
-        </div>
-
-        <div>
-            <img src="images/paintedhall.jpeg" />
-            <p> thiathiawhiatiaw</p>
-        </div>
-
+        <?php
+        echo $displayResults;
+        ?>
     </section>
 </main>
 
