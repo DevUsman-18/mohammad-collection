@@ -1,23 +1,33 @@
 <?php
 
-require './database.php';
+require 'functions.php';
 
 use PHPUnit\Framework\TestCase;
 
 class tests extends TestCase {
     //success test
     public function testDisplayDB(){
-    $input = ["artist"=>"osaias",
-        "year-made" => 2000,
-        "painting-name" => "lmao",
-        "image-link"=> "foo.bar"
-    ] ;
+    $input = [[
+        "artist"=>"osaias",
+        "year-made"=>"2000",
+        "painting-name"=>"lmao",
+        "image-link" => "foobar.jpeg"
+    ]];
 
-    $expected = '<div>'. '<img src="images/' . $result['image-link'] . '" alt="a painting of  '
-            . $result['painting-name'] .' " /><p>'
-            . $result['artist'] . '<br>' . $result['painting-name'] . '<br>' . $result['year-made'] .  '</p></div>';
+    $expected = ' <div><img src="images/foobar.jpeg" alt="a painting of lmao " />';
+    $expected .= '<p>osaias<br>lmao<br>2000</p></div>';
 
     $result = displayDB($input);
-    $this->assertContains("year-made", $result);
+    $this->assertEquals($expected, $result);
+    }
+
+
+    //failure test
+    //right number of elements returned?
+
+    public function testFailureDisplayDB(){
+        $input = [[87]];
+        $this->expectException(TypeError::class);
+        displayDB($input);
     }
 }
