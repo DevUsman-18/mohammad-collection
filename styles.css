@@ -7,24 +7,23 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #FFDAB9;
+    background-color: #FFEBCD;
 }
 nav div {
     display: flex;
     justify-content: center;
-
-}
+   }
 
 nav div h3 {
     margin: 20px;
 }
-
-main section {
+main {
     background-color: #FFC0CB;
+}
+main section {
     justify-content: center;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     margin: 50px 0 0 0 ;
 }
 
@@ -39,9 +38,23 @@ main section div img {
     height: 200px;
 }
 
+.bottom-section {
+    margin: 0;
+}
+
 footer {
     display: flex;
     justify-content: center;
     background-color: #FFC0CB;
     border-top: #000000 1px solid;
+}
+
+@media screen and (max-width: 460px){
+    .image1 {
+        margin-top: 40px;
+    }
+
+    main section div {
+        margin: 10px;
+    }
 }
