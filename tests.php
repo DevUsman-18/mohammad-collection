@@ -4,7 +4,7 @@ require './database.php';
 
 use PHPUnit\Framework\TestCase;
 
-class database extends TestCase {
+class tests extends TestCase {
     //success test
     public function testDisplayDB(){
     $input = ["artist"=>"osaias",
