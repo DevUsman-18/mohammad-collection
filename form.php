@@ -1,3 +1,28 @@
+<?php
+require 'functions.php';
+
+$artist = '';
+$paintingName = '';
+$year = '' ;
+$image = '';
+
+if($_POST['artist'] && $_POST['year-made'] && $_POST['painting-name'] && $_POST['image-link']
+    !== null) {
+    $artist = $_POST['artist'];
+    $year = $_POST['year-made'];
+    $paintingName = $_POST['painting-name'];
+    $image = $_POST['image-link'];
+}
+
+$userOutput = cleanseData($_POST);
+
+
+//formData($artist, $year, $paintingName, $image);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +35,7 @@
 </head>
 <body>
 <h1>Submit your own art collection piece here</h1>
-    <form method="post" action="data.php">
+    <form method="post" action="form.php">
         <input type="text" name="artist" placeholder="Artist" required/>
         <br>
         <input type="number" name="year-made" placeholder="Year completed" required />
