@@ -22,7 +22,6 @@ class tests extends TestCase {
     }
 
     //failure test
-    //right number of elements returned?
     public function testFailureDisplayDB(){
         $expected = 'Incorrect input received.';
         $input = [];

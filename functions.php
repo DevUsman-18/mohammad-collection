@@ -54,3 +54,11 @@ function displayDB(array $results) : string {
     return $dbResult;
 }
 
+
+
+function formData($postArtist, $postYearMade, $postPaintingName, $postImageLink){
+
+}
+
+
+
