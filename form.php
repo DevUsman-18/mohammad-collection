@@ -11,13 +11,15 @@
 <body>
 <h1>Submit your own art collection piece here</h1>
     <form method="post" action="index.php?message=1">
-        <input type="text" name="artist" placeholder="Artist">
+        <input type="text" name="artist" placeholder="Artist" />
         <br>
-        <input type="number" name="year-made" placeholder="Year completed">
+        <input type="number" name="year-made" placeholder="Year completed" />
         <br>
-        <input type="text" name="painting-name" placeholder="Name of painting">
+        <input type="text" name="painting-name" placeholder="Name of painting" />
         <br>
         <input type="url" name="image-link" placeholder="Image">
+        <br>
+        <input type="submit" placeholder="submit"/>
     </form>
 </body>
 </html>
