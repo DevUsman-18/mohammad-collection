@@ -1,5 +1,5 @@
 <?php
-
+require_once 'functions.php';
 
 $db = new PDO ('mysql:host=db; dbname=mohammad-collection', 'root', 'password');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -9,11 +9,4 @@ $query = $db->prepare(" SELECT `artist`, `year-made`, `painting-name`,`image-lin
 $query->execute();
 $results = $query->fetchAll();
 
-$dbResult = '';
-
-foreach($results as $result){
-    $dbResult .= '<div>' . $result['artist'] . " in the year " . $result['year-made'] . " completed work on "
-        . $result['painting-name'] . ". " . $result['image-link'] . '</div>';
-}
-
-echo $dbResult;
+$displayResults = displayDB($results);
