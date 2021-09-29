@@ -2,6 +2,10 @@
 
 require_once 'functions.php';
 
+if(isset($_GET['message']) && $_GET['message'] == 1){
+    echo 'Thank you, your art piece has been submitted for review!';
+}
+
 $database = getDB();
 
 $results = getPaintings($database);
@@ -34,6 +38,12 @@ $displayResults = displayDB($results);
         ?>
     </section>
 </main>
+
+<footer>
+    <div>
+        <p>To submit your own collection piece <a href="form.php" target="_blank"> click here </a></p>
+    </div>
+</footer>
 
 </body>
 </html>
