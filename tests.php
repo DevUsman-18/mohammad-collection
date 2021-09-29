@@ -21,12 +21,20 @@ class tests extends TestCase {
     $this->assertEquals($expected, $result);
     }
 
-
     //failure test
     //right number of elements returned?
-
     public function testFailureDisplayDB(){
-        $input = [[87]];
+        $expected = 'Incorrect input received.';
+        $input = [];
+        $result = displayDB($input);
+        $this->assertEquals($expected, $result);
+    }
+
+
+
+    //malformed test
+    public function testMalformedDisplayDB(){
+        $input = 87;
         $this->expectException(TypeError::class);
         displayDB($input);
     }
