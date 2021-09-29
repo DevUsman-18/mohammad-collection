@@ -7,9 +7,17 @@ function displayDB(array $results) : string {
     }
 
     foreach($results as $result){
-    $dbResult .= '<div>'. '<img src="images/' . $result['image-link'] . '"' . ' alt="a painting of '
-               . $result['painting-name'] .' " /><p>'
-            . $result['artist'] . '<br>' . $result['painting-name'] . '<br>' . $result['year-made'] .  '</p></div>';
+    $dbResult .= '<div>'. '<img src="images/'
+                . $result['image-link']
+                . '"' . ' alt="a painting of '
+                . $result['painting-name']
+                .' " /><p>'
+                . $result['artist']
+                . '<br>'
+                . $result['painting-name']
+                . '<br>'
+                . $result['year-made']
+                .  '</p></div>';
     }
     return $dbResult;
 }
