@@ -17,9 +17,9 @@
         <br>
         <input type="text" name="painting-name" placeholder="Name of painting" />
         <br>
-        <input type="url" name="image-link" placeholder="Image">
+        <input type="url" name="image-link" placeholder="Image" />
         <br>
-        <input type="submit" placeholder="submit"/>
+        <input type="submit" placeholder="submit" />
     </form>
 </body>
 </html>
