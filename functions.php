@@ -62,9 +62,7 @@ function displayDB(array $results) : string {
  *
  * @return array filtered user input collected in array and returned
  */
-function cleanseData(array $userInput) : array  {
-//        $userInput = filter_var($userInput, FILTER_SANITIZE_SPECIAL_CHARS);
-//        return $userInput;
+function cleanseData(array $userInput) : array {
     $outputArr = [];
     foreach($userInput as $input){
         $outputArr[] .= filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS);

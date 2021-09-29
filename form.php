@@ -8,10 +8,16 @@ $image = '';
 
 if($_POST['artist'] && $_POST['year-made'] && $_POST['painting-name'] && $_POST['image-link']
     !== null) {
-    $artist = $_POST['artist'];
-    $year = $_POST['year-made'];
-    $paintingName = $_POST['painting-name'];
-    $image = $_POST['image-link'];
+    if ((strlen($_POST['artist']) || strlen($_POST['painting-name']) || strlen($_POST['image-link']) < 255)
+        && (strlen($_POST['year-made']) === 4)) {
+        $artist = $_POST['artist'];
+        $year = $_POST['year-made'];
+        $paintingName = $_POST['painting-name'];
+        $image = $_POST['image-link'];
+    } else {
+        echo 'String is too long or year entered is incorrect';
+        return $_POST = NULL;
+    }
 }
 
 $userOutput = cleanseData($_POST);

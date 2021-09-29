@@ -21,6 +21,13 @@ class tests extends TestCase {
     $this->assertEquals($expected, $result);
     }
 
+    public function testCleanseData(){
+        $input = ["f>u!<bar"];
+        $expected = ["f&#62;u!&#60;bar"];
+        $result= cleanseData($input);
+        $this->assertEquals($expected, $result);
+    }
+
     //failure test
     public function testFailureDisplayDB(){
         $expected = 'Incorrect input received.';
@@ -29,6 +36,9 @@ class tests extends TestCase {
         $this->assertEquals($expected, $result);
     }
 
+    public function testFailureCleanseData(){
+
+    }
 
 
     //malformed test
@@ -36,5 +46,11 @@ class tests extends TestCase {
         $input = 87;
         $this->expectException(TypeError::class);
         displayDB($input);
+    }
+
+    public function testMalformedCleanseData(){
+        $input = 42;
+        $this->expectException(TypeError::class);
+        cleanseData($input);
     }
 }
