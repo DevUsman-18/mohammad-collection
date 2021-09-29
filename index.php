@@ -1,7 +1,12 @@
 <?php
 
-require_once 'database.php';
 require_once 'functions.php';
+
+$database = getDB();
+
+$results = getPaintings($database);
+
+$displayResults = displayDB($results);
 ?>
 
 <!DOCTYPE html>
@@ -29,12 +34,6 @@ require_once 'functions.php';
         ?>
     </section>
 </main>
-
-<footer>
-    <div>
-       <p> To submit your own collection piece <a href="form.php" target="_blank" > click here </a> </p>
-    </div>
-</footer>
 
 </body>
 </html>
