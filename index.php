@@ -1,10 +1,10 @@
 <?php
 
-require_once 'functions.php';
-
-if(isset($_GET['message']) && $_GET['message'] == 1){
+if (isset($_GET['message']) && $_GET['message'] == 1) {
     echo 'Thank you, your art piece has been submitted for review!';
 }
+
+require_once 'functions.php';
 
 $database = getDB();
 
@@ -24,7 +24,6 @@ $displayResults = displayDB($results);
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-
 <nav>
     <div>
         <h3>Art Collection</h3>
