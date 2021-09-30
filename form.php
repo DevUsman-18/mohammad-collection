@@ -1,8 +1,6 @@
 <?php
 require_once 'functions.php';
 
-$database = getDB();
-
 if (isset($_GET['message']) && $_GET['message'] == 2) {
     echo 'Incorrect submission, try again';
 }
@@ -22,13 +20,13 @@ if(isset($_POST['artist'])
             || strlen($_POST['image-link']) < 255)
         && (strlen($_POST['year-made']) === 4))
     {
+        $database = getDB();
         $artist = $_POST['artist'];
         $year = $_POST['year-made'];
         $paintingName = $_POST['painting-name'];
         $image = $_POST['image-link'];
     } else {
         echo 'String is too long or year entered is incorrect';
-        return $_POST = NULL;
     }
 }
 
@@ -39,8 +37,14 @@ if(!empty($userOutput)) {
     $year = $userOutput[2];
     $image = $userOutput[3];
 
-    sendFormData($database, $artist, $paintingName, $year, $image);
-    getSubmission($database, $artist);
+sendFormData($database, $artist, $paintingName, $year, $image);
+$submissionResults = getSubmission($database, $artist);
+
+if($submissionResults == true){
+        header("Location: index.php?message=1");
+    } else {
+        header("Location: form.php?message=2");
+    }
 }
 ?>
 

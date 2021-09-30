@@ -69,11 +69,9 @@ function cleanseData(array $userInput) : array {
     foreach($userInput as $strings){
         if(!is_string($strings)){
             return ['Incorrect input'];
+        } else {
+            $outputArr[] .= filter_var($strings, FILTER_SANITIZE_SPECIAL_CHARS);
         }
-    }
-
-    foreach($userInput as $input){
-        $outputArr[] .= filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS);
     }
     return $outputArr;
 }
@@ -110,17 +108,13 @@ function sendFormData(object $db, string $postArtist, string $postYearMade, stri
  * @param object $db db connection
  * @param string $postArtist artist name to check against db
  */
-function getSubmission(object $db, string $postArtist){
+function getSubmission(PDO $db, string $postArtist){
     $query = $db->prepare("SELECT `artist`, `year-made`, `painting-name`, `image-link` FROM `collection-items` 
 WHERE `artist` = :artistName ;");
 
     $query->bindParam(':artistName', $postArtist);
     $query->execute();
     $results = $query->fetchAll();
+    return $results;
 
-    if($results){
-       header("Location: index.php?message=1");
-    } else {
-        header("Location: form.php?message=2");
-    }
 }
