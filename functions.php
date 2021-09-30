@@ -1,5 +1,5 @@
 <?php
-require_once 'form.php';
+
 /**
  * Set up DB connection
  *
@@ -76,12 +76,11 @@ function cleanseData(array $userInput) : array {
     return $outputArr;
 }
 
-
-
-function formData(object $db, string $postArtist, string $postYearMade, string $postPaintingName, string $postImageLink)
+//touches db no unit testing
+function sendFormData(object $db, string $postArtist, string $postYearMade, string $postPaintingName, string $postImageLink)
 {
     $query = $db->prepare("INSERT INTO `collection-items` (`artist`, `year-made`, `painting-name`, `image-link`) 
-    VALUES (:artistName , :yearMade , :paintingName, :imageLink); ");
+    VALUES (:artistName, :yearMade, :paintingName, :imageLink); ");
 
     $query->bindParam(':artistName', $postArtist);
     $query->bindParam(':yearMade', $postYearMade);
@@ -89,12 +88,20 @@ function formData(object $db, string $postArtist, string $postYearMade, string $
     $query->bindParam(':imageLink', $postImageLink);
 
     $query->execute();
-
-//    $results = $query->fetchAll();
-//    return $results;
-    // can i capture output, filter and test if success or not
-
 }
 
+//touches db no unit testing
+function getSubmission(object $db, string $postArtist){
+    $query = $db->prepare("SELECT `artist`, `year-made`, `painting-name`, `image-link` FROM `collection-items` 
+WHERE `artist` = :artistName ;");
 
+    $query->bindParam(':artistName', $postArtist);
+    $query->execute();
+    $results = $query->fetchAll();
 
+    if($results){
+       header("Location: index.php?message=1");
+    } else {
+        header("Location: form.php?message=2");
+    }
+}
