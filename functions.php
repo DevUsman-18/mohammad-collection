@@ -54,3 +54,38 @@ function displayDB(array $results) : string {
     return $dbResult;
 }
 
+
+/**
+ * Cleanse user input using filter_var() and return an array
+ *
+ * @param array $userInput user input in form is passed through
+ *
+ * @return array filtered user input collected in array and returned
+ */
+function cleanseData(array $userInput) : array {
+    $outputArr = [];
+    foreach($userInput as $strings){
+        if(!is_string($strings)){
+            return ['Incorrect input'];
+        }
+    }
+
+    foreach($userInput as $input){
+        $outputArr[] .= filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+    return $outputArr;
+}
+
+
+/**
+ * @param string $postArtist
+ * @param string $postYearMade
+ * @param string $postPaintingName
+ * @param string $postImageLink
+ */
+function formData(string $postArtist, string $postYearMade, string $postPaintingName, string $postImageLink){
+
+}
+
+
+
