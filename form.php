@@ -6,8 +6,10 @@ $paintingName = '';
 $year = '' ;
 $image = '';
 
-if($_POST['artist'] && $_POST['year-made'] && $_POST['painting-name'] && $_POST['image-link']
-    !== null) {
+if(isset($_POST['artist'])
+    && isset($_POST['year-made'])
+    && isset($_POST['painting-name'])
+    && isset($_POST['image-link'])) {
     if ((strlen($_POST['artist'])
             || strlen($_POST['painting-name'])
             || strlen($_POST['image-link']) < 255)
