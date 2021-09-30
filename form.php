@@ -64,7 +64,7 @@ if(!empty($userOutput)) {
         <br>
         <input type="text" name="painting-name" placeholder="Name of painting" required />
         <br>
-        <input type="url" name="image-link" placeholder="Image" required/>
+        <input type="text" name="image-link" placeholder="Image URL" required/>
         <br>
         <input type="submit" placeholder="submit" />
     </form>
