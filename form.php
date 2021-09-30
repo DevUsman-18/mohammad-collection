@@ -1,5 +1,11 @@
 <?php
-require 'functions.php';
+require_once 'functions.php';
+
+$database = getDB();
+
+if (isset($_GET['message']) && $_GET['message'] == 2) {
+    echo 'Incorrect submission, try again';
+}
 
 $artist = '';
 $paintingName = '';
@@ -27,11 +33,15 @@ if(isset($_POST['artist'])
 }
 
 $userOutput = cleanseData($_POST);
+if(!empty($userOutput)) {
+    $artist = $userOutput[0];
+    $paintingName = $userOutput[1];
+    $year = $userOutput[2];
+    $image = $userOutput[3];
 
-
-//formData($artist, $year, $paintingName, $image);
-
-
+    sendFormData($database, $artist, $paintingName, $year, $image);
+    getSubmission($database, $artist);
+}
 ?>
 
 
@@ -54,7 +64,7 @@ $userOutput = cleanseData($_POST);
         <br>
         <input type="text" name="painting-name" placeholder="Name of painting" required />
         <br>
-        <input type="url" name="image-link" placeholder="Image" required/>
+        <input type="text" name="image-link" placeholder="Image URL" required/>
         <br>
         <input type="submit" placeholder="submit" />
     </form>
