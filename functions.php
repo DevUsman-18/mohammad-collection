@@ -1,5 +1,5 @@
 <?php
-
+require_once 'form.php';
 /**
  * Set up DB connection
  *
@@ -77,13 +77,22 @@ function cleanseData(array $userInput) : array {
 }
 
 
-/**
- * @param string $postArtist
- * @param string $postYearMade
- * @param string $postPaintingName
- * @param string $postImageLink
- */
-function formData(string $postArtist, string $postYearMade, string $postPaintingName, string $postImageLink){
+
+function formData(object $db, string $postArtist, string $postYearMade, string $postPaintingName, string $postImageLink)
+{
+    $query = $db->prepare("INSERT INTO `collection-items` (`artist`, `year-made`, `painting-name`, `image-link`) 
+    VALUES (:artistName , :yearMade , :paintingName, :imageLink); ");
+
+    $query->bindParam(':artistName', $postArtist);
+    $query->bindParam(':yearMade', $postYearMade);
+    $query->bindParam(':paintingName', $postPaintingName);
+    $query->bindParam(':imageLink', $postImageLink);
+
+    $query->execute();
+
+//    $results = $query->fetchAll();
+//    return $results;
+    // can i capture output, filter and test if success or not
 
 }
 

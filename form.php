@@ -28,8 +28,10 @@ if(isset($_POST['artist'])
 
 $userOutput = cleanseData($_POST);
 
+$db = getDB();
+$submission = formData($db, $artist, $year, $paintingName, $image);
+echo $submission;
 
-//formData($artist, $year, $paintingName, $image);
 
 
 ?>
