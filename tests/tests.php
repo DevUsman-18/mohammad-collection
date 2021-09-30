@@ -30,14 +30,17 @@ class tests extends TestCase {
 
     //failure test
     public function testFailureDisplayDB(){
-        $expected = 'Incorrect input received.';
         $input = [];
+        $expected = 'Incorrect input received.';
         $result = displayDB($input);
         $this->assertEquals($expected, $result);
     }
 
     public function testFailureCleanseData(){
-
+        $input = ['foo', 72,'bar'];
+        $expected = ['Incorrect input'];
+        $result = cleanseData($input);
+        $this->assertEquals($expected, $result);
     }
 
 

@@ -8,8 +8,11 @@ $image = '';
 
 if($_POST['artist'] && $_POST['year-made'] && $_POST['painting-name'] && $_POST['image-link']
     !== null) {
-    if ((strlen($_POST['artist']) || strlen($_POST['painting-name']) || strlen($_POST['image-link']) < 255)
-        && (strlen($_POST['year-made']) === 4)) {
+    if ((strlen($_POST['artist'])
+            || strlen($_POST['painting-name'])
+            || strlen($_POST['image-link']) < 255)
+        && (strlen($_POST['year-made']) === 4))
+    {
         $artist = $_POST['artist'];
         $year = $_POST['year-made'];
         $paintingName = $_POST['painting-name'];

@@ -64,6 +64,12 @@ function displayDB(array $results) : string {
  */
 function cleanseData(array $userInput) : array {
     $outputArr = [];
+    foreach($userInput as $strings){
+        if(!is_string($strings)){
+            return ['Incorrect input'];
+        }
+    }
+
     foreach($userInput as $input){
         $outputArr[] .= filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS);
     }
