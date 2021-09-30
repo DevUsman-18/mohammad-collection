@@ -54,7 +54,6 @@ function displayDB(array $results) : string {
     return $dbResult;
 }
 
-
 /**
  * Cleanse user input using filter_var() and return an array
  *
