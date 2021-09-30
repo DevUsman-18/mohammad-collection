@@ -20,7 +20,6 @@ $displayResults = displayDB($results);
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-
 <nav>
     <div>
         <h3>Art Collection</h3>
@@ -34,6 +33,17 @@ $displayResults = displayDB($results);
         ?>
     </section>
 </main>
+
+<footer>
+    <div>
+        <p>To submit your own collection piece <a href="form.php" target="_blank"> click here </a></p>
+        <?php
+        if (isset($_GET['message']) && $_GET['message'] == 1) {
+           echo 'Thank you, your art piece has been submitted for review';
+        }
+        ?>
+    </div>
+</footer>
 
 </body>
 </html>
